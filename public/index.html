@@ -1,45 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>Мои дела</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <div class="container">
-    <h2 class="todo__caption">Список задач</h2>
+ <div class="container">
+    <h2 class="todo__caption">список задач</h2>
     <div>
-      <input id="shooter" class="form-control" type="text" placeholder="Новая задача">
-      <button id="add-btn" type="button">добавить</button>
+      <input class="form-control" type="text" placeholder="новая задача">
+      <input id="do-it" class="form-control" type="text" placeholder="новая задача">
+      <button id="add-btn" type="button">Добавить</button>
       <div class="todo-body">
+        <ul class="list">
         <ul id="todo-list" class="list">
         </ul>
       </div>
     </div>
   </div>
+  </div>
 </body>
-
 <script>
 
-  let addbtn = document.getElementById('add-btn')
-
-  addbtn.addEventListener('click', addItem)
+  let myBtn = document.getElementById('add-btn')
+  myBtn.addEventListener('click', addItem)
 
   function addItem(data) {
-    let input = document.getElementById('shooter')
-    let list = document.getElementById('todo-list')
+    let myInput = document.getElementById('do-it')
+    let myList = document.getElementById('todo-list')
 
-    if (input.value !== '' && input.value !== null) {
-
-      let nrwItem = document.createElement('li')
-      nrwItem.innerText = input.value
-      list.appendChild(nrwItem)
-    }
-    console.log(input.value)
-    input.value = ''
+    if (myInput.value !== '') {
+      let newItem = document.createElement('li')
+      newItem.innerText = myInput.value
+      myList.appendChild(newItem)
+      myInput.value = '';
+    }    
   }
+
+</script>
 
 
 </script>
